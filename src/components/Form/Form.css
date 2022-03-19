@@ -1,0 +1,127 @@
+.form-control{
+  background-color: #ececec;
+  padding: 32px;
+  border-radius: 10px;
+  -webkit-box-shadow: 13px 10px 35px -7px rgba(0,0,0,0.57);
+  -moz-box-shadow: 13px 10px 35px -7px rgba(0,0,0,0.57);
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25);
+}
+
+.form-control div img{
+  height: 30px;
+  width: 30px;
+  cursor: pointer;
+  margin-left: -15%;
+  margin-bottom: -3%;
+}
+
+.form-control div img:hover{
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25);
+}
+
+.modal{
+  width: 99vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  background: rgba(0, 0, 0, 0.288);
+  text-align: center;
+}
+
+.inside-form{
+  border-radius: 14px;
+  width: 40vw;
+  padding:  3%;
+  display: flex;
+  height: max-content;
+  flex-direction: column;
+  background: #fff;
+  position: relative;
+  top: 35%;
+  left: 30%;
+}
+
+.inside-form h3{
+  top:200px;
+  color: blueviolet;
+  margin-top: -5%;
+  padding-bottom: 10%;
+}
+
+.inside-form img{
+  cursor: pointer;
+  position: absolute;
+  right: 8px;
+  top: 16px;
+}
+
+.inside-form img:hover{
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25);
+}
+
+.inside-form h6{
+  font-size: medium;
+}
+
+.none{
+  display: none;
+}
+
+.form-control{
+  display: flex;
+}
+
+.form-control h1{
+    font-size: 40px;
+    font-weight: 500;
+}
+
+.form-input {
+  width: 100%;
+  padding: 8px;
+  font-size: 18px;
+  border-width: 1px;
+  border-color: #CCCCCC;
+  background-color: #FFFFFF;
+  color: #000000;
+  border-style: solid;
+  border-radius: 6px;
+  box-shadow: 0px 0px 5px rgba(66,66,66,.75);
+}
+.form-input:focus {
+  outline:none;
+}
+
+.form-btn {
+  cursor: pointer;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  color: #ffffff;
+  font-size: 15px;
+  background: #3498db;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  border: none;
+  transition: all ease .3s;
+  margin: 0 12px;
+}
+.form-btn:hover {
+  background: #3cb0fd;
+  text-decoration: none;
+}
+
+.form-control div input{
+  padding-right: 18%;
+}
+
+.form-control div div{
+  display: flex;
+}
+
+.form-control div div h6{
+  padding-left: 2%;
+  padding-right: 2%;
+}

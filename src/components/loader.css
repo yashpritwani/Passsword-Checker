@@ -1,0 +1,22 @@
+.mdc-linear-progress__buffering-dots{
+    background-image: none !important;
+}
+
+.load-red .mdc-linear-progress__bar-inner{
+    background-color: red !important;
+}
+.load-orange .mdc-linear-progress__bar-inner{
+    background-color: orange !important;
+}
+.load-purple .mdc-linear-progress__bar-inner{
+    background-color: purple !important;
+}
+.load-blue .mdc-linear-progress__bar-inner{
+    background-color: blue !important;
+}
+.load-green .mdc-linear-progress__bar-inner{
+    background-color: green !important;
+}
+.load-none .mdc-linear-progress__bar-inner{
+    background-color: white !important;
+}
