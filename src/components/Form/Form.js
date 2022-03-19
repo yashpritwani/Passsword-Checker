@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef} from "react";
 import "./Form.css";
 import Loader from "../loader";
 
@@ -7,6 +7,7 @@ const Form = () => {
   const [strength, setStrength] = useState();
   const [modal, setModal] = useState(false);
   const [passType , setPassType] = useState("password");
+  var resp = useRef("");
   const [passConf , setPassConf] = useState({
     hasUpperCase : 0 , 
     hasLowerCase : 0, 
@@ -25,6 +26,7 @@ const Form = () => {
   // 5. More preference if contain more special case char 
 
   useEffect(() => {
+    resp.current = ""
     passConf.hasSpecialChar = 0;
     let passwordCopy = password;
     if (passwordCopy.length >= 8) passConf.score = 2
@@ -47,6 +49,17 @@ const Form = () => {
             passConf.hasNumericValue + 
             passConf.hasSpecialChar
           ) / ( passwordCopy.length + 2 ) ;
+    if(passConf.hasLowerCase < 1 ) resp.current += "\n Please Provide A Lowercase Char";
+    if(passConf.hasUpperCase < 1 ) resp.current += "\n Please Provide A Upper Case Char";
+    if(passConf.hasNumericValue < 1 ) resp.current += "\n Please Provide A Number Char";
+    if(passConf.hasSpecialChar < 4 ) resp.current += "\n Please Provide more Special Characters in password";
+    if(
+      strength < 0.9 && 
+      passConf.hasSpecialChar >= 3 && 
+      passConf.hasNumericValue > 0 && 
+      passConf.hasUpperCase > 0 && 
+      passConf.hasLowerCase > 0 && 
+      password.length > 8 ) resp.current += "\n Please replace small and capital English Char more then 1 with special Char"
     passConf.score = 0
     passConf.hasLowerCase = 0
     passConf.hasUpperCase = 0
@@ -59,7 +72,7 @@ const Form = () => {
     else if(strength <= 0.80 && strength > 0.60) setColor("purple")
     else if(strength <= 0.60 && strength > 0.40 ) setColor("orange")
     else setColor("red")
-  },[strength,password,passConf]);
+  },[strength,password,passConf,resp]);
 
   return (
     <div onClick={()=>{if(modal) setModal(!modal)}}>
@@ -77,7 +90,8 @@ const Form = () => {
           ? <h6> Please Provide More Than 8 Chars </h6> 
           : <h6> </h6> 
           }
-          { 
+          <h6>{resp.current}</h6>
+          {/* { 
           passConf.hasLowerCase < 1 
           ? <h6> Please Provide A Lowercase Char </h6> 
           : <h6> </h6> 
@@ -106,7 +120,7 @@ const Form = () => {
             password.length > 8 
             ? <h6> Please replace small and capital English Char more then 1 with special Char</h6> 
             : <h6> </h6> 
-          }
+          } */}
         </div>
       </div>
       <h1>Password Strength Checker</h1>
