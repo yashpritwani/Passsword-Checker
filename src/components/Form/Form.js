@@ -91,36 +91,6 @@ const Form = () => {
           : <h6> </h6> 
           }
           <h6>{resp.current}</h6>
-          {/* { 
-          passConf.hasLowerCase < 1 
-          ? <h6> Please Provide A Lowercase Char </h6> 
-          : <h6> </h6> 
-          }
-          { 
-          passConf.hasUpperCase < 1 
-          ? <h6> Please Provide A Uppercase Char </h6> 
-          : <h6> </h6> 
-          }
-          { 
-          passConf.hasNumericValue < 1 
-          ? <h6> Please Provide A Number Char </h6> 
-          : <h6> </h6> 
-          }
-          { 
-            passConf.hasSpecialChar < 3 
-            ? <h6> Please Provide more Special Characters in password </h6> 
-            : <h6> </h6> 
-          }
-          { 
-            strength < 0.9 && 
-            passConf.hasSpecialChar >= 3 && 
-            passConf.hasNumericValue > 0 && 
-            passConf.hasUpperCase > 0 && 
-            passConf.hasLowerCase > 0 && 
-            password.length > 8 
-            ? <h6> Please replace small and capital English Char more then 1 with special Char</h6> 
-            : <h6> </h6> 
-          } */}
         </div>
       </div>
       <h1>Password Strength Checker</h1>
